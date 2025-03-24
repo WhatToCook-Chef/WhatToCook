@@ -5,7 +5,7 @@ fetch(API_URL)
   .then(data => console.log("Válasz a szerverről:", data))
   .catch(error => console.error("Hiba történt:", error));
 
-async function getFoods() {
+/*async function getFoods() {
     const response = await fetch(`${API_URL}?action=getFoods`);
     const foods = await response.json();
     
@@ -19,4 +19,4 @@ async function getFoods() {
     });
 }
 
-getFoods();
+getFoods();*/
