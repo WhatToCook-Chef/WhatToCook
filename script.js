@@ -2,8 +2,8 @@ const API_URL = "https://script.google.com/macros/s/AKfycbze92xbC6gv822hdFa63Ruh
 
 fetch(API_URL)
   .then(response => response.json())
-  .then(data => console.log("Válasz a szerverről:", data))
-  .catch(error => console.error("Hiba történt:", error));
+  .then(data => console.log("háhááá Válasz a szerverről:", data))
+  .catch(error => console.error("nyányányá Hiba történt:", error));
 
 /*async function getFoods() {
     const response = await fetch(`${API_URL}?action=getFoods`);
