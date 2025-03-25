@@ -1,22 +1,25 @@
-const API_URL = "https://script.google.com/macros/s/AKfycby6WTH2mIj1qBugaGH0Ucb7eyDHGBOCoUqhpUNgQwBwA7PJdHdgJaUXhWEQ7oD-1EJlaA/exec";
-
-fetch(API_URL)
-  .then(response => response.json())
-  .then(data => console.log("háhááá Válasz a szerverről:", data))
-  .catch(error => console.error("nyányányá Hiba történt:", error));
-
-/*async function getFoods() {
-    const response = await fetch(`${API_URL}?action=getFoods`);
-    const foods = await response.json();
-    
-    const list = document.getElementById("food-list");
-    list.innerHTML = "";
-    
-    foods.forEach(food => {
-        const li = document.createElement("li");
-        li.textContent = `${food.name} (${food.category})`;
-        list.appendChild(li);
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("home-btn").addEventListener("click", function() {
+        loadContent("home");
     });
-}
 
-getFoods();*/
+    document.getElementById("history-btn").addEventListener("click", function() {
+        loadContent("history");
+    });
+
+    document.getElementById("calendar-btn").addEventListener("click", function() {
+        loadContent("calendar");
+    });
+});
+
+function loadContent(page) {
+    let content = document.getElementById("content");
+
+    if (page === "home") {
+        content.innerHTML = "<h2>Főoldal</h2><p>Itt találhatók az ételek és az étkezési napló.</p>";
+    } else if (page === "history") {
+        content.innerHTML = "<h2>Korábbi étkezések</h2><p>Itt láthatod, mikor etted az adott ételt.</p>";
+    } else if (page === "calendar") {
+        content.innerHTML = "<h2>Étkezési naptár</h2><p>Tervezd meg az étkezéseidet a naptár segítségével.</p>";
+    }
+}
