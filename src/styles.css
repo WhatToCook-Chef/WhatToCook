@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #7e02f1; /* Világos lila háttér */
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1188ff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 24px;
+    margin: auto;
+}
+
+/* FŐ TARTALOM */
+.content-container {
+    width: 66.67%;
+    margin: 80px auto 20px auto; /* Középre helyezés */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        width: 90%;
+    }
+}
+
+/* LISTA/GÖRGETHETŐ TÁBLÁZAT */
+.food-selector {
+    width: 80%;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.food-columns {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.food-column {
+    width: 30%;
+    text-align: center;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* SZŰRŐ INPUT MEZŐK */
+.search-input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #A020F0; /* Lila border */
+}
+
+/* GÖRGETHETŐ LISTA */
+.scroll-list {
+    height: 150px;
+    overflow-y: auto;
+    border: 2px solid #A020F0; /* Lila border */
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* GOMBOK */
+.btn-refresh {
+    background-color: #fff;
+    border: 2px solid #A020F0; /* Lila border */
+    padding: 10px;
+    color: #A020F0;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-refresh:hover {
+    background-color: #A020F0;
+    color: white;
+}
+
+/* NAPTÁR & TIMELINE */
+.calendar, .timeline {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #1188ff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 66.67%;
+    margin: auto;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
