@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #7e02f1; /* Világos lila háttér */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #7e02f1;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -27,12 +34,13 @@ body {
 /* FŐ TARTALOM */
 .content-container {
     width: 66.67%;
-    margin: 80px auto 20px auto; /* Középre helyezés */
+    margin: 60px auto; /* Navbar és footer között középre */
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 10px;
-    min-height: 100vh;
-    overflow-y: auto;
+    min-height: calc(100vh - 120px); /* Kitölti a navbar és footer közötti helyet */
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -45,7 +53,6 @@ body {
 .food-selector {
     width: 80%;
     text-align: center;
-    justify-content: space-around;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -54,6 +61,19 @@ body {
     display: flex;
     justify-content: space-between;
     margin: auto;
+}
+
+/* Mobilon egymás alá kerülő oszlopok */
+@media (max-width: 768px) {
+    .food-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-column {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 .food-column {
@@ -72,39 +92,44 @@ label {
     width: 100%;
     padding: 5px;
     border-radius: 5px;
-    border: 2px solid #A020F0; /* Lila border */
+    border: 2px solid #A020F0;
+    box-shadow: 0 0 5px #ADD8E6;
 }
 
-/* GÖRGETHETŐ LISTA */
+/* LEGÖRDÜLŐ MENÜK */
 .scroll-list {
     height: 150px;
     overflow-y: auto;
-    border: 2px solid #A020F0; /* Lila border */
+    border: 2px solid #A020F0;
     padding: 5px;
     background: white;
     border-radius: 5px;
+    display: none; /* Alapértelmezetten rejtve */
+}
+
+.food-column select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #A020F0;
+    box-shadow: 0 0 5px #ADD8E6;
 }
 
 /* GOMBOK */
 .btn-refresh {
     background-color: #fff;
-    border: 2px solid #A020F0; /* Lila border */
+    border: 2px solid #A020F0;
     padding: 10px;
     color: #A020F0;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 0 5px #ADD8E6;
 }
 
 .btn-refresh:hover {
     background-color: #A020F0;
     color: white;
-}
-
-/* NAPTÁR & TIMELINE */
-.calendar, .timeline {
-    text-align: center;
-    margin-top: 30px;
 }
 
 /* FOOTER */
@@ -131,4 +156,19 @@ label {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
+    color: white;
+}
+
+/* Footer gomb ikonok */
+.footer-btn i {
+    font-size: 30px;
+}
+
+/* Mobilon a footer gombok egyenlően oszlanak el */
+@media (max-width: 768px) {
+    .footer-nav {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
 }
